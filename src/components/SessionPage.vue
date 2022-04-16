@@ -7,9 +7,9 @@
       <div class="information__number">
         Котировочная сессия <strong>{{ id }}</strong>
       </div>
-      <div class="information_status">
-        <div class="dot"></div>  
-        {{ currentStatus }}
+      <div class="information_status" :style="{color: currentStatus.color}">
+        <div class="dot" :style="{backgroundColor: currentStatus.color}"></div>  
+        {{ currentStatus.title }}
       </div>
     </div>
     <div class="session-wrap">
@@ -24,7 +24,7 @@ export default {
   data() {
     return{
       id: 1234567,
-      status: "done",
+      status: "canseled",
     }
   },
   computed: {
@@ -32,13 +32,21 @@ export default {
     currentStatus() {
       switch (this.status) {
         case "active":
-          return "АКТИВНАЯ"
+          return {title: 'АКТИВНАЯ', color: '#0d9b68'}
         case "done":
-          return "УСПЕШНО ЗАВЕРШЕНА"
+          return {title: 'УСПЕШНО ЗАВЕРШЕНА', color: '#167c85'}
         case "canseled":
-          return "НЕ СОСОТОЯЛАСЬ"
+          return {title: 'НЕ СОСОТОЯЛАСЬ', color: '#db2b21'}
       }
     }
   },
 }
 </script>
+
+<style scoped>
+.dot{
+  width: 10.5px;
+  height: 10.5px;
+  border-radius: 10.5px;
+}
+</style>

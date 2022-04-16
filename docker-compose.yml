@@ -1,5 +1,15 @@
 version: "3.8"
 services:
+  app:
+    build:
+      context: .
+    depends_on:
+      - bff-website
+      - rabbitmq
+      - mongo
+    ports:
+      - 3000:80
+
   bff-website:
     image: kuwerin/bff-website:latest
     environment:

@@ -1,14 +1,17 @@
 <template>
   <div id="app">
     <TopMenu />
+    <SessionPage />
   </div>
 </template>
 <script>
 import TopMenu from "@/components/TopMenu.vue";
+import SessionPage from "@/components/SessionPage.vue";
 
 export default {
   components: {
     TopMenu,
+    SessionPage,
   },
 }
 </script>

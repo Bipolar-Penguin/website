@@ -3,14 +3,9 @@
     <div class="content">
       <div class="logo">
         <img class="menu_logo" src="@/assets/img/logo.svg">
+        <img class="menu_logo_minimal" src="@/assets/img/minimal.svg">
       </div>
       <div class="control">
-        <div class="menu_img_wrap">
-          <img class="menu_img" src="@/assets/img/cart.svg">
-          <img class="menu_img" src="@/assets/img/arrow.svg">
-          <img class="menu_img" src="@/assets/img/idea.svg">
-          <img class="menu_img" src="@/assets/img/support.svg">
-        </div>
         <div class="button_group">
           <button class="login_button">Войти</button>
           <button class="sign_button">Зарегистрироваться</button>
@@ -29,6 +24,7 @@ export default {
 
 <style lang="css" scoped>
   .menu{
+    margin-bottom: 30px;
     width: 100vw;
     height: 76px;
     box-shadow: rgb(0 0 0 / 18%) 0px 1px 12px;
@@ -88,5 +84,19 @@ export default {
   .logo{
     display: flex;
     align-items: center;
+  }
+  .menu_logo_minimal{
+    display: none;
+  }
+  .menu_logo{
+    display: block;
+  }
+  @media (max-width: 800px){
+    .menu_logo_minimal{
+      display: block;
+    }
+    .menu_logo{
+      display: none;
+    }
   }
 </style>

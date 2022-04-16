@@ -1,52 +1,40 @@
 <template>
-  <div>
-    <div class="timer-wrap">
-
+  <FetchSessionContainer
+    :auto-load="true"
+    #default="{sessions, loading}"
+  >
+    <div class="session_page-wrap">
+      <SessionInformation :session="sessions" v-if="!loading"/>
+      <SessionTimer :date="sessions.date" :max-price="sessions.max_price"/>
     </div>
-    <div class="information-wrap">
-      <div class="information__number">
-        Котировочная сессия <strong>{{ id }}</strong>
-      </div>
-      <div class="information_status" :style="{color: currentStatus.color}">
-        <div class="dot" :style="{backgroundColor: currentStatus.color}"></div>  
-        {{ currentStatus.title }}
-      </div>
-    </div>
-    <div class="session-wrap">
-
-    </div>
-  </div>
+  </FetchSessionContainer>
 </template>
 
 <script>
+import FetchSessionContainer from '@/containers/FetchSessionContainer';
+import SessionInformation from '@/components/SessionPageAssets/SessionInformation.vue';
+import SessionTimer from '@/components/SessionPageAssets/SessionTimer.vue';
 
 export default {
-  data() {
-    return{
-      id: 1234567,
-      status: "canseled",
-    }
-  },
-  computed: {
-    // eslint-disable-next-line vue/return-in-computed-property
-    currentStatus() {
-      switch (this.status) {
-        case "active":
-          return {title: 'АКТИВНАЯ', color: '#0d9b68'}
-        case "done":
-          return {title: 'УСПЕШНО ЗАВЕРШЕНА', color: '#167c85'}
-        case "canseled":
-          return {title: 'НЕ СОСОТОЯЛАСЬ', color: '#db2b21'}
-      }
-    }
+  components: {
+    FetchSessionContainer,
+    SessionInformation,
+    SessionTimer,
   },
 }
 </script>
 
 <style scoped>
-.dot{
-  width: 10.5px;
-  height: 10.5px;
-  border-radius: 10.5px;
-}
+  .session_page-wrap{
+    width: 90vw;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+  }
+  @media (max-width: 800px){
+    .session_page-wrap{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 </style>

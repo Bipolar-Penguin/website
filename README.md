@@ -21,5 +21,8 @@ To run this application localy, simply execute:
 ```shell
 docker-compose up --build
 ```
+# Application infrustructure
+<p align="center">
+  <img src="https://github.com/Bipolar-Penguin/website/blob/master/IMAGE%202022-04-17%2017:06:38.jpg" alt="Application infrustructure">
+</p>
 
-[alt text](https://github.com/Bipolar-Penguin/website/blob/master/IMAGE%202022-04-17%2017:06:38.jpg)

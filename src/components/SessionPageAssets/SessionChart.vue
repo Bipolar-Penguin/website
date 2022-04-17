@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="{marginBottom: '200px'}">
     <vue-highcharts :options="options" ref="lineCharts"></vue-highcharts>
   </div>
 </template>

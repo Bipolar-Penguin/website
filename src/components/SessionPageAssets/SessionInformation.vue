@@ -97,7 +97,7 @@ export default {
   color: #264b82;
 }
 .information-wrap{
-  
+  width: 95%;
 }
 
 .timer-wrap{

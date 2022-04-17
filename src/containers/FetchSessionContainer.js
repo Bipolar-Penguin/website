@@ -15,7 +15,8 @@ export default {
       this.loading = false;
     },
     async getSessions () {
-      const res = await axios.get('http://192.168.247.4:8000/session');
+      // const res = await axios.get('http://192.168.247.4:8000/session');
+      const res = await axios.get('http://localhost:8000/session');
       return res.data[0];
     },
   },

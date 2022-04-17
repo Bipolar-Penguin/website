@@ -1,6 +1,11 @@
 # Website
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=👋+Welcome+to+BipolarPenguin+team+repository!;We+are:;Ilia+Shubin:+JS+Frontend+Developer;Denis+Mikhailets:+JS+Frontend+Developer;Kuverin+Simon:+Golang/Python+backend+developer)](https://git.io/typing-svg)
 
+# Contributors:
+[Denis Mikhailets](https://github.com/DMikhailiets)
+[Ilia Shubin](https://github.com/IliaSNK)
+[Kuverin Simon](https://github.com/Kuwerin)
+
 This is a repository to application, that you can test via internet: [click me](http://62.109.10.249/)
 
 This is a repository to application, that you can test via internet: [click me](http://62.109.10.249/)

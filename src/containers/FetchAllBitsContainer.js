@@ -4,13 +4,11 @@ export default {
   name: 'FetchAllBitsContainer',
   methods: {
     async getBits () {
-      console.log(this.session);
-      const res = await axios.get(`http://bff-website:8000/session/1345497a-1f76-46a2-9561-b5fdf77b722e`);
+      const res = await axios.get(`http://62.109.10.249:8000/session/1345497a-1f76-46a2-9561-b5fdf77b722e`);
       // const res = await axios.get('http://localhost:8000/session');
       this.bits = res.data;
       this.currentPrice = res.data[0].bid
       // this.userCan = res.data[0].user_id !== this.log
-      console.log(res.data[0].user_id)
       this.chartData = []
       this.chartTime = []
       this.bits.forEach(el => {
@@ -18,7 +16,6 @@ export default {
         const date = new Date(el.date)
         this.chartTime.push(`${date.getHours()}:${date.getMinutes()}`)
       })
-      console.log(this.bits)
       this.$emit('updated', {
         value: this.chartData,
         date: this.chartTime,
@@ -52,8 +49,8 @@ export default {
   },
   mounted() {
     setInterval(() => {
+      this.getBits();
     }, 1000)
-    this.getBits();
   },
   render() {
     return this.$scopedSlots.default({

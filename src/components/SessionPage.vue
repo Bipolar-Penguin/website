@@ -61,18 +61,16 @@ export default {
   
   methods: {
     async setBit(sessions){
-      const res = await axios.post(`http://bff-website:8000/session/${sessions.id}`, {}, {
+      const res = await axios.post(`http://62.109.10.249:8000/session/${sessions.id}`, {}, {
         headers: {
           'authorization': this.jwt
         }
       }) 
-      console.log(res.data)
+      console.log(res)
       this.userCan = false;
     },
     updateChart(event){
-      console.log(event)
       this.userCan = this.log !== event.userCan
-      console.log(event)
       this.data.data = event.value.reverse()
       this.categories = event.date.reverse()
     }

@@ -19,7 +19,7 @@ export default {
           this.log = 'c'
           break;
       }
-      const res = await axios.post('http://bff-website:8000/user/auth', {
+      const res = await axios.post('http://62.109.10.249:8000/user/auth', {
         user_id: id
       })
       this.jwt = res.data;

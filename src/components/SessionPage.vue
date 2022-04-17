@@ -61,7 +61,7 @@ export default {
   
   methods: {
     async setBit(sessions){
-      const res = await axios.post(`http://localhost:8000/session/${sessions.id}`, {}, {
+      const res = await axios.post(`http://bff-website:8000/session/${sessions.id}`, {}, {
         headers: {
           'authorization': this.jwt
         }

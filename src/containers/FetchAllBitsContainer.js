@@ -5,7 +5,7 @@ export default {
   methods: {
     async getBits () {
       console.log(this.session);
-      const res = await axios.get(`http://localhost:8000/session/1345497a-1f76-46a2-9561-b5fdf77b722e`);
+      const res = await axios.get(`http://bff-website:8000/session/1345497a-1f76-46a2-9561-b5fdf77b722e`);
       // const res = await axios.get('http://localhost:8000/session');
       this.bits = res.data;
       this.currentPrice = res.data[0].bid

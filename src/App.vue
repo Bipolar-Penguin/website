@@ -38,7 +38,11 @@ export default {
   },
 
   mounted() {
-    
+    const socket = new WebSocket('ws://svc-notificator:5000/ws/trading')
+    socket.addEventListener('message', () => {
+      console.log(1);
+    } )
+
   },
 }
 </script>

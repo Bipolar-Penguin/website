@@ -27,11 +27,11 @@
       <div :style="{opacity: '0.5', fontSize: '14px'}">Начальная цена</div>
       <div :style="{fontSize: '24px'}" >{{ maxPrice.toString().slice(0, -2) }},{{ maxPrice.toString().slice(-2) }}₽</div>
       <div :style="{opacity: '0.5', fontSize: '14px'}">Снижение в ходе сессии</div>
-      <div :style="{fontSize: '24px', marginLeft: '10px'}">300,00 ₽ <span :style="{fontSize: '16px', opacity: '0.5'}">1,00%</span></div>
+      <div :style="{fontSize: '24px', marginLeft: '10px'}">{{ deltaPrice.toString().slice(0, -2) }},{{ deltaPrice.toString().slice(-2) }}₽ </div>
     </div>
     <div class="current_price">
       <div :style="{fontSize: '20px'}">Текущая цена</div>
-      <div :style="{fontSize: '24px', color: 'rgb(38, 75, 130)'}">29 700,00 ₽</div>
+      <div :style="{fontSize: '24px', color: 'rgb(38, 75, 130)'}">{{ currentPrice.toString().slice(0, -2) }},{{ currentPrice.toString().slice(-2) }}₽</div>
     </div>
   </div>
 </template>
@@ -45,9 +45,18 @@ export default {
       default: () => ({}),
     },
     maxPrice: {
-      type: String,
-      default: '0',
+      type: Number,
+      default: 0,
     },
+    currentPrice: {
+      type: Number,
+      default: 0,
+    }
+  },
+  computed: {
+    deltaPrice() {
+      return this.maxPrice - this.currentPrice;
+    }
   },
   data() {
     return {

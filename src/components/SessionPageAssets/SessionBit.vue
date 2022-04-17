@@ -8,13 +8,13 @@
         <div v-if="!userCan">Ваша текущая ставка</div>
       </div>
       <div class="current_price">
-        150000
+        {{ currentPrice.toString().slice(0, -2) }},{{ currentPrice.toString().slice(-2) }}₽
       </div>
 
       <div class="current_down">
         <div :style="{opacity: '0.5', fontSize: '14px'}">Cнижение от текущей цены</div>
         <div :style="{fontSize: '1em'}">
-          123123
+          {{ delta.toString().slice(0, -2) }},{{ delta.toString().slice(-2) }}₽
         </div>
       </div>
 
@@ -34,7 +34,19 @@ export default {
     userCan: {
       type: Boolean,
       default: true,
-    }
+    },
+    jwt: {
+      type: String,
+      default: '',
+    },
+    currentPrice: {
+      type: Number,
+      default: 0,
+    },
+    delta: {
+      type: Number,
+      default: 0,
+    },
   },
   methods: {
     setBit() {

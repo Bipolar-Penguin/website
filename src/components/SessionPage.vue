@@ -3,7 +3,7 @@
     :auto-load="true"
     #default="{sessions, loading}"
   >
-    <FetchAllBitsContainer #default="{ currentPrice}" :session="sessions" @updated="updateChart">
+    <FetchAllBitsContainer #default="{ currentPrice}" :session="sessions" :log="log" @updated="updateChart">
       <div class="wrap">
         <div class="session_page-wrap">
           <SessionInformation :session="sessions" v-if="!loading" :currentPrice="currentPrice"/>
@@ -61,7 +61,7 @@ export default {
   
   methods: {
     async setBit(sessions){
-      const res = await axios.post(`http://192.168.247.4:8000/session/${sessions.id}`, {}, {
+      const res = await axios.post(`http://localhost:8000/session/${sessions.id}`, {}, {
         headers: {
           'authorization': this.jwt
         }
@@ -70,6 +70,8 @@ export default {
       this.userCan = false;
     },
     updateChart(event){
+      console.log(event)
+      this.userCan = this.log !== event.userCan
       console.log(event)
       this.data.data = event.value.reverse()
       this.categories = event.date.reverse()

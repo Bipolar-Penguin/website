@@ -51,6 +51,12 @@ export default {
   methods: {
     setBit() {
       this.$emit('setbit')
+      this.$notify({
+        group: 'foo',
+        type: 'sucsses',
+        position: 'top left',
+        text: 'Вы сделали ставку',
+      });
     }
   }
 }

@@ -33,10 +33,10 @@ services:
       APP_RABBITMQ_URL: amqp://admin:admin@rabbitmq/default
       APP_RABBITMQ_EXCHANGE: trading
 
-      APP_NOTIFICATOR_TELEGRAM_TOKEN: 5315725497:AAEp9jI78og2Ucxi9ZWM6aT9SbvEKbP0XBg
-      APP_NOTIFICATOR_SMS_TOKEN: kuwerin@gmail.com:NFx0HygJ6a0OMuQmfss3dOzIbSU
-      APP_NOTIFICATOR_MAIL_USER: noreply@vr-interiors.com
-      APP_NOTIFICATOR_MAIL_PASSWORD: yb311911515
+      APP_NOTIFICATOR_TELEGRAM_TOKEN: Your-Telegram-Token
+      APP_NOTIFICATOR_SMS_TOKEN: Your-SMS-Aero-token
+      APP_NOTIFICATOR_MAIL_USER: Your-Email
+      APP_NOTIFICATOR_MAIL_PASSWORD: Your-Paasword
 
     restart: always
     ports:
